@@ -1,5 +1,9 @@
-import DashboardFeature from '@/components/dashboard/dashboard-feature'
+import StudyRoom from '@/components/StudyRoom';
 
-export default function Page() {
-  return <DashboardFeature />
+export default function Home() {
+  return (
+    <main>
+      <StudyRoom />
+    </main>
+  );
 }

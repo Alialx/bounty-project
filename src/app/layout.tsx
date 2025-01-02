@@ -3,6 +3,8 @@ import {ClusterProvider} from '@/components/cluster/cluster-data-access'
 import {SolanaProvider} from '@/components/solana/solana-provider'
 import {UiLayout} from '@/components/ui/ui-layout'
 import {ReactQueryProvider} from './react-query-provider'
+import { Inter as FontSans } from "next/font/google"
+import { Poppins } from "next/font/google"
 
 export const metadata = {
   title: 'template-next-tailwind-counter',
@@ -15,10 +17,15 @@ const links: { label: string; path: string }[] = [
   { label: 'Counter Program', path: '/counter' },
 ]
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${poppins.className}`}>
         <ReactQueryProvider>
           <ClusterProvider>
             <SolanaProvider>

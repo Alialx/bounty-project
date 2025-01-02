@@ -1,4 +1,4 @@
-# template-next-tailwind-counter
+# Bounty-Project 
 
 ## Getting Started
 
