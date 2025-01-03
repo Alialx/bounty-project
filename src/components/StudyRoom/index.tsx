@@ -3,13 +3,13 @@
 import { FC, useState } from 'react'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { Program, web3 } from '@project-serum/anchor'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Program, web3, BN} from '@project-serum/anchor'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { BarChart, Activity, Users, Sparkles, Star, Album, File } from 'lucide-react'
+
 
 const StudyRoom: FC = () => {
   const { publicKey } = useWallet()
@@ -21,7 +21,8 @@ const StudyRoom: FC = () => {
   const createStudyRoom = async () => {
     if (!publicKey) return
     try {
-      const stakeAmount = new web3.BN(parseFloat(stake) * web3.LAMPORTS_PER_SOL)
+      // Use BN directly since we imported it
+      const stakeAmount = new BN(parseFloat(stake) * web3.LAMPORTS_PER_SOL)
       const deadlineTimestamp = new Date(deadline).getTime() / 1000
       console.log('Study room created:', { roomName, goal, stake: stakeAmount.toString(), deadline: deadlineTimestamp })
     } catch (error) {
@@ -95,7 +96,7 @@ const StudyRoom: FC = () => {
     </div>
 
     <div className="flex items-center justify-center">
-      <WalletMultiButton className="mb-6 " />
+      <WalletMultiButton ></WalletMultiButton>
     </div>
           
           {publicKey && (
