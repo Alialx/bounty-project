@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { BarChart, Activity, Users, Sparkles, Star } from 'lucide-react'
+import { BarChart, Activity, Users, Sparkles, Star, Album, File } from 'lucide-react'
 
 const StudyRoom: FC = () => {
   const { publicKey } = useWallet()
@@ -23,7 +23,6 @@ const StudyRoom: FC = () => {
     try {
       const stakeAmount = new web3.BN(parseFloat(stake) * web3.LAMPORTS_PER_SOL)
       const deadlineTimestamp = new Date(deadline).getTime() / 1000
-      // Program call implementation
       console.log('Study room created:', { roomName, goal, stake: stakeAmount.toString(), deadline: deadlineTimestamp })
     } catch (error) {
       console.error(error)
@@ -34,7 +33,7 @@ const StudyRoom: FC = () => {
     <div className=" mx-auto p-6 space-y-6">
       <div className="w-full max-w-7xl mx-auto px-4 py-20">
       <div className="flex items-center justify-center gap-2 mb-5">
-          <p className="h-5 w-5 text-[#9eff00]" />
+          <Album className="h-5 w-5 text-[#9eff00]" />
           <span className="text-[#9eff00] font-medium">How it works</span>
       </div>
 
@@ -84,13 +83,20 @@ const StudyRoom: FC = () => {
       </div>
     </div>
 
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader>
-          <CardTitle>Create a Study Room</CardTitle>
-          <CardDescription>Set up your study goals and stake tokens</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <WalletMultiButton className="mb-6" />
+    <div className="flex items-center justify-center gap-2 mb-5">
+          <Sparkles className="h-5 w-5 text-[#9eff00]" />
+          <span className="text-[#9eff00] font-medium">Get Started</span>
+      </div>
+
+    <div className="flex items-center justify-center gap-2 mb-10">
+        <h1 className = "text-4xl font-display text-zinc-100 tracking-tight leading-tight text-center">
+        Create a Study Room
+        </h1>
+    </div>
+
+    <div className="flex items-center justify-center">
+      <WalletMultiButton className="mb-6 " />
+    </div>
           
           {publicKey && (
             <form onSubmit={(e) => { e.preventDefault(); createStudyRoom() }} className="space-y-6">
@@ -141,8 +147,6 @@ const StudyRoom: FC = () => {
               </Button>
             </form>
           )}
-        </CardContent>
-      </Card>
     </div>
   )
 }

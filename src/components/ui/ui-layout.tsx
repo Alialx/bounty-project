@@ -9,6 +9,7 @@ import toast, {Toaster} from 'react-hot-toast'
 import {AccountChecker} from '../account/account-ui'
 import {ClusterChecker, ClusterUiSelect, ExplorerLink} from '../cluster/cluster-ui'
 import {WalletButton} from '../solana/solana-provider'
+import { BookHeart } from 'lucide-react'
 
 export function UiLayout({ children, links }: { children: ReactNode; links: { label: string; path: string }[] }) {
   const pathname = usePathname()
@@ -18,9 +19,9 @@ export function UiLayout({ children, links }: { children: ReactNode; links: { la
       <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
         <div className="flex-1">
           <Link className="btn btn-ghost normal-case text-xl" href="/">
-            <img className="h-4 md:h-6" alt="Logo" src="/logo.png" />
+            <BookHeart className="h-4 md:h-6" />
           </Link>
-          <ul className="menu menu-horizontal px-1 space-x-2">
+          <ul className="menu menu-horizontal px-1 space-x-2 align-center justify-center">
             {links.map(({ label, path }) => (
               <li key={path}>
                 <Link className={pathname.startsWith(path) ? 'active' : ''} href={path}>
