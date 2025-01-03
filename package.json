@@ -1,5 +1,5 @@
 {
-  "name": "study-lah",
+  "name": "template-next-tailwind-counter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "@solana/spl-token": "^0.4.8",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
-    "@solana/wallet-adapter-react-ui": "github:Alialx/wallet-adapter-react-ui#main",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/web3.js": "^1.98.0",
     "@tabler/icons-react": "^3.11.0",
     "@tanstack/react-query": "^5.51.11",
@@ -30,7 +30,7 @@
     "daisyui": "^4.12.10",
     "jotai": "^2.9.1",
     "lucide-react": "^0.469.0",
-    "next": "github:Alialx/next#main",
+    "next": "^15.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.4.1",

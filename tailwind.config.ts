@@ -61,6 +61,35 @@ const config: Config = {
   		}
   	}
   },
+  daisyui: {
+	themes: [
+		{
+		theme: {
+			"primary": "#9eff00",     
+			"secondary": "#1E1E1E",    
+			"accent": "#9eff00",     
+			"neutral": "#000000",      
+			"base-100": "#000000",     
+			"base-200": "#0A0A0A",     
+			"base-300": "#141414",     
+			"info": "#9eff00",         
+			"warning": "#FFB938",      
+			"error": "#FF5757",        
+			
+			"--rounded-box": "0.5rem",    
+			"--rounded-btn": "0.5rem",   
+			"--btn-text-case": "none",   
+			
+			"--text-base-content": "white",
+			"--text-primary-content": "black",
+			}
+		}
+	],
+	darkTheme: "theme",
+	base: true,
+	styled: true,
+	utils: true,
+},
   plugins: [require('daisyui'), require("tailwindcss-animate")],
 };
 export default config;

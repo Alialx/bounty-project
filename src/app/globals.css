@@ -7,7 +7,17 @@ body {
     height: 100%;
 }
 
+body {
+  @apply bg-black text-foreground;
+}
 
+#__next, html{
+  @apply bg-black;
+}
+
+.__className_1fa6f9{
+  background-color: black;
+}
 .wallet-adapter-button-trigger {
   color:white;
   background: linear-gradient(to bottom, #181818, #0e0e0e); 
@@ -17,8 +27,6 @@ body {
   border: 1px solid #262626; 
   text:white;
 }
-
-
 
 .wallet-adapter-dropdown-list,
 .wallet-adapter-button {

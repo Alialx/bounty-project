@@ -15,8 +15,8 @@ export function UiLayout({ children, links }: { children: ReactNode; links: { la
   const pathname = usePathname()
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
+    <div className="flex flex-col min-h-screen bg-black">
+      <div className="navbar bg-black text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0 border-b border-gray-800">
         <div className="flex-1">
           <Link className="btn btn-ghost normal-case text-xl" href="/">
             <BookHeart className="h-4 md:h-6" />
