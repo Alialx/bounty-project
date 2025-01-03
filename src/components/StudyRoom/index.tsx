@@ -21,7 +21,6 @@ const StudyRoom: FC = () => {
   const createStudyRoom = async () => {
     if (!publicKey) return
     try {
-      // Use BN directly since we imported it
       const stakeAmount = new BN(parseFloat(stake) * web3.LAMPORTS_PER_SOL)
       const deadlineTimestamp = new Date(deadline).getTime() / 1000
       console.log('Study room created:', { roomName, goal, stake: stakeAmount.toString(), deadline: deadlineTimestamp })
